@@ -1,4 +1,4 @@
-import { Play, Music } from 'lucide-react'
+import { Play } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
 import HeroImage from '@/assets/hero.png'
@@ -37,7 +37,7 @@ export function Hero() {
                 ))}
               </svg>
 
-              <h1 className="text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
+              <h1 className="text-3xl lg:text-5xl xl:text-6xl font-black text-white leading-tight">
                 Sound that breathes. <span className="text-sky-500">Stories that move.</span>
               </h1>
             </div>

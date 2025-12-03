@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import { Menu } from 'lucide-react'
+import { Ham, Menu, MenuIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import Logo from '@/assets/logo.svg?react'
 
 const navLinks = [
@@ -24,7 +24,7 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0  w-full z-50 transition-all duration-300 ${
         scrolled ? 'bg-neutral-900/90 backdrop-blur-md border-sky-500/10' : 'bg-transparent'
       }`}
     >
@@ -56,36 +56,38 @@ export function Header() {
             >
               <a href="#work-with-me">Work with me</a>
             </Button>
-
-            <Sheet>
-              <SheetTrigger asChild className="lg:hidden">
-                <Button variant="ghost" size="icon" className="text-white">
-                  <Menu className="h-6 w-6" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="bg-neutral-900 border-sky-500/20">
-                <nav className="flex flex-col gap-6 mt-8">
-                  {navLinks.map((link) => (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      className="text-lg text-gray-300 hover:text-sky-400 transition-colors"
-                    >
-                      {link.label}
-                    </a>
-                  ))}
-                  <Button
-                    asChild
-                    className="bg-sky-500 hover:bg-sky-600 text-white rounded-full mt-4"
-                  >
-                    <a href="#work-with-me">Work with me</a>
-                  </Button>
-                </nav>
-              </SheetContent>
-            </Sheet>
+            <HamburgerMenu />
           </div>
         </div>
       </div>
     </header>
+  )
+}
+
+const HamburgerMenu = () => {
+  return (
+    <Sheet>
+      <SheetTrigger asChild className="lg:hidden">
+        <Button variant="ghost" size="icon" className="text-white cursor-pointer">
+          <Menu className="size-5" />
+        </Button>
+      </SheetTrigger>
+      <SheetContent side="right" className="bg-neutral-900 border-sky-500/20 px-8">
+        <nav className="flex flex-col gap-6 mt-8">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-lg text-gray-300 hover:text-sky-400 transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+          <Button asChild className="bg-sky-500 hover:bg-sky-600 text-white rounded-full mt-4">
+            <a href="#work-with-me">Work with me</a>
+          </Button>
+        </nav>
+      </SheetContent>
+    </Sheet>
   )
 }

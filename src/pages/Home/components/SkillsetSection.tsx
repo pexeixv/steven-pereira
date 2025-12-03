@@ -32,20 +32,20 @@ export function SkillsetSection() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="skillset" className="py-24 bg-black/20 relative">
-      <div className="container mx-auto px-4 lg:px-8" ref={ref}>
+    <section id="skillset" className="relative py-16 bg-black/20">
+      <div className="container px-4 mx-auto lg:px-8" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="mb-4 text-4xl font-bold text-white lg:text-5xl">
             What can I <span className="text-sky-500">do?</span>
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid gap-6 mb-6 md:grid-cols-2 lg:grid-cols-4">
           {features.map((feature, index) => {
             const Icon = feature.icon
             return (
@@ -55,13 +55,13 @@ export function SkillsetSection() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.45, delay: index * 0.06 }}
               >
-                <Card className="bg-neutral-900/50 backdrop-blur-sm border-sky-500/20 rounded-2xl p-6 hover:bg-neutral-900/70 hover:-translate-y-1 transition-all duration-300 group h-full">
+                <Card className="h-full p-6 transition-all duration-300 bg-neutral-900/50 backdrop-blur-sm border-sky-500/20 rounded-2xl hover:bg-neutral-900/70 hover:-translate-y-1 group">
                   <div className="flex items-start gap-4">
-                    <div className="w-11 h-11 rounded-full bg-sky-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-sky-500/20 transition-colors">
+                    <div className="flex items-center justify-center flex-shrink-0 transition-colors rounded-full w-11 h-11 bg-sky-500/10 group-hover:bg-sky-500/20">
                       <Icon className="w-5 h-5 text-sky-400" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-sky-400 transition-colors">
+                      <h3 className="mb-2 text-lg font-semibold text-white transition-colors group-hover:text-sky-400">
                         {feature.title}
                       </h3>
                       <p className="text-sm text-gray-400">{feature.description}</p>
@@ -77,10 +77,11 @@ export function SkillsetSection() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-center"
+          className="text-right"
         >
-          <p className="text-2xl lg:text-3xl font-bold text-white">
-            I can cook. I can clean.{' '}
+          <p className="text-lg font-bold text-white ">
+            {' '}
+            + I can cook. I can clean.{' '}
             <span className="text-sky-500">I can create an experience.</span>
           </p>
         </motion.div>

@@ -11,7 +11,7 @@ import '@/App.css'
 
 function Home() {
   return (
-    <div className="min-h-screen bg-neutral-900">
+    <div className="min-h-screen bg-neutral-900 overflow-x-hidden">
       <Header />
       <Hero />
       <MusicSection />
