@@ -37,13 +37,13 @@ export function Hero() {
                 ))}
               </svg>
 
-              <h1 className="text-3xl font-black leading-tight text-white lg:text-5xl xl:text-6xl">
+              <h1 className="text-4xl font-black leading-tight text-white lg:text-5xl xl:text-6xl">
                 Sound that breathes. <span className="text-sky-500">Stories that move.</span>
               </h1>
             </div>
 
             <p className="text-lg text-gray-300">
-              Hello I'm Steven, a music producer and sound engineer from Goa, India!
+              I'm Steven, a music producer and sound engineer from Goa, India.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">

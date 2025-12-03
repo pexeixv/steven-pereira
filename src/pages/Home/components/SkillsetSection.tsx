@@ -77,11 +77,11 @@ export function SkillsetSection() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-right"
+          className=""
         >
-          <p className="text-lg font-bold text-white ">
-            {' '}
-            + I can cook. I can clean.{' '}
+          <p className="font-bold text-white lg:text-lg lg:text-right">
+            <span className="text-lg">+</span> <br className="lg:hidden" /> I can cook.{' '}
+            <br className="lg:hidden" /> I can clean. <br className="lg:hidden" />
             <span className="text-sky-500">I can create an experience.</span>
           </p>
         </motion.div>

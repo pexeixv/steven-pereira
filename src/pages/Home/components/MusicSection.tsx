@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import Wavefrom from '@/assets/waveform.png'
+import Waveform from '@/assets/waveform.png'
 
 export function MusicSection() {
   const ref = useRef(null)
@@ -35,7 +35,7 @@ export function MusicSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <img src={Wavefrom} alt="" />
+            <img src={Waveform} alt="" className="max-lg:min-w-[130%]" />
 
             <div className="absolute w-64 h-64 rounded-full -right-8 -bottom-8 bg-sky-500/10 blur-3xl"></div>
           </motion.div>

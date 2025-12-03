@@ -9,7 +9,7 @@ const tools = ['Studio One', 'FL Studio', 'Ableton', 'Pro Tools', 'Waves', 'FabF
 
 const instruments = ['Keyboard', 'Guitar']
 
-const workflowSteps = ['Receive session', 'Organize', 'Mix', 'Review', 'Master', 'Deliver']
+const workflowSteps = ['Receive', 'Organize', 'Mix', 'Review', 'Master', 'Deliver']
 
 const principles = [
   {
@@ -100,8 +100,8 @@ export function WorkflowSection() {
             </div>
 
             <div>
-              <h3 className="mb-4 text-xl font-semibold text-white">Process</h3>
-              <div className="flex items-center gap-2 pb-4 overflow-x-auto">
+              <h3 className="mb-4 text-xl font-semibold text-white">Process of Working</h3>
+              <div className="flex flex-wrap items-center gap-4 pb-4 overflow-x-auto ">
                 {workflowSteps.map((step, index) => (
                   <motion.div
                     key={step}
@@ -110,13 +110,10 @@ export function WorkflowSection() {
                     transition={{ duration: 0.4, delay: 0.4 + index * 0.08 }}
                     className="flex items-center gap-2 whitespace-nowrap"
                   >
-                    <div className="flex items-center justify-center flex-shrink-0 w-8 h-8 text-xs font-semibold border rounded-full bg-sky-500/20 border-sky-500/40 text-sky-400">
+                    <Badge className="flex items-center justify-center flex-shrink-0 w-8 h-8 text-xs font-semibold border rounded-full bg-sky-500/20 border-sky-500/40 text-sky-400">
                       {index + 1}
-                    </div>
+                    </Badge>
                     <span className="text-sm text-gray-300">{step}</span>
-                    {index < workflowSteps.length - 1 && (
-                      <div className="w-4 h-px mx-1 bg-sky-500/30"></div>
-                    )}
                   </motion.div>
                 ))}
               </div>
