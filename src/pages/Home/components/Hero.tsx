@@ -2,6 +2,7 @@ import { Play } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
 import HeroImage from '@/assets/hero.png'
+import ContactForm from './ContactForm'
 
 export function Hero() {
   return (
@@ -47,13 +48,7 @@ export function Hero() {
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button
-                asChild
-                size="lg"
-                className="text-white rounded-full bg-sky-500 hover:bg-sky-600"
-              >
-                <a href="#work-with-me">Work with me</a>
-              </Button>
+              <ContactForm />
               <Button
                 asChild
                 size="lg"

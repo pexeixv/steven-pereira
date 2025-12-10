@@ -1,4 +1,5 @@
 import { Instagram, Music2, Youtube } from 'lucide-react'
+import ContactForm from './ContactForm'
 
 export function Footer() {
   return (
@@ -33,12 +34,7 @@ export function Footer() {
               >
                 Skillset
               </a>
-              <a
-                href="#work-with-me"
-                className="text-sm text-gray-400 transition-colors hover:text-sky-400"
-              >
-                Work with me
-              </a>
+              <ContactForm />
             </nav>
           </div>
 

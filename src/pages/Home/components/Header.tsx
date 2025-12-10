@@ -3,6 +3,7 @@ import { Ham, Menu, MenuIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetClose, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import Logo from '@/assets/logo.svg?react'
+import ContactForm from './ContactForm'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -52,12 +53,7 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-4">
-            <Button
-              asChild
-              className="hidden text-white rounded-full lg:inline-flex bg-sky-500 hover:bg-sky-600"
-            >
-              <a href="#work-with-me">Work with me</a>
-            </Button>
+            <ContactForm />
             <HamburgerMenu />
           </div>
         </div>
@@ -85,9 +81,7 @@ const HamburgerMenu = () => {
               {link.label}
             </a>
           ))}
-          <Button asChild className="mt-4 text-white rounded-full bg-sky-500 hover:bg-sky-600">
-            <a href="#work-with-me">Work with me</a>
-          </Button>
+          <ContactForm />
         </nav>
       </SheetContent>
     </Sheet>

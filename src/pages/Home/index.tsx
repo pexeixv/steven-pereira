@@ -5,13 +5,12 @@ import { SkillsetSection } from './components/SkillsetSection'
 import { WorkflowSection } from './components/WorkflowSection'
 import { WorkGallery } from './components/WorkGallery'
 import { FAQSection } from './components/FAQSection'
-import { ContactSection } from './components/ContactSection'
 import { Footer } from './components/Footer'
 import '@/App.css'
 
 function Home() {
   return (
-    <div className="min-h-screen bg-neutral-900 overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden bg-neutral-900">
       <Header />
       <Hero />
       <MusicSection />
@@ -19,7 +18,6 @@ function Home() {
       <WorkflowSection />
       <WorkGallery />
       <FAQSection />
-      <ContactSection />
       <Footer />
     </div>
   )
