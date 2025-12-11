@@ -6,9 +6,18 @@ import './index.css'
 
 export { render }
 
+interface HelmetContext {
+  helmet: {
+    title: { toString: () => string }
+    meta: { toString: () => string }
+    link: { toString: () => string }
+    script: { toString: () => string }
+  }
+}
+
 async function render(pageContext: { urlPathname: string }) {
   const { urlPathname } = pageContext
-  const helmetContext = {} as any
+  const helmetContext: HelmetContext = {} as HelmetContext
 
   const appHtml = ReactDOMServer.renderToString(
     <HelmetProvider context={helmetContext}>

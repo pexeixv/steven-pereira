@@ -6,9 +6,7 @@ import { HelmetProvider } from 'react-helmet-async'
 import App from '../src/App'
 import '../src/index.css'
 
-async function render(pageContext: any) {
-  const { Page } = pageContext
-  
+async function render() {
   hydrateRoot(
     document.getElementById('root')!,
     <HelmetProvider>

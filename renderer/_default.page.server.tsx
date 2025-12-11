@@ -9,9 +9,18 @@ import '../src/index.css'
 
 const passToClient = ['pageContext', 'documentProps', 'helmet']
 
-async function render(pageContext: any) {
+interface HelmetContext {
+  helmet: {
+    title: { toString: () => string }
+    meta: { toString: () => string }
+    link: { toString: () => string }
+    script: { toString: () => string }
+  }
+}
+
+async function render(pageContext: { urlPathname: string }) {
   const { urlPathname } = pageContext
-  const helmetContext = {} as any
+  const helmetContext: HelmetContext = {} as HelmetContext
 
   const appHtml = ReactDOMServer.renderToString(
     <HelmetProvider context={helmetContext}>
