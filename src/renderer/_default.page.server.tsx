@@ -8,9 +8,19 @@ import type { PageContextServer } from './types'
 
 const passToClient = ['pageProps', 'urlPathname', 'documentProps']
 
+interface HelmetData {
+  title: { toString: () => string }
+  meta: { toString: () => string }
+  link: { toString: () => string }
+}
+
+interface HelmetContext {
+  helmet?: HelmetData
+}
+
 async function render(pageContext: PageContextServer) {
   const { Page, pageProps } = pageContext
-  const helmetContext = {}
+  const helmetContext: HelmetContext = {}
 
   const pageHtml = renderToString(
     <HelmetProvider context={helmetContext}>
@@ -19,7 +29,7 @@ async function render(pageContext: PageContextServer) {
   )
 
   // Get helmet data after rendering
-  const { helmet } = helmetContext as { helmet?: { title: { toString: () => string }; meta: { toString: () => string }; link: { toString: () => string } } }
+  const { helmet } = helmetContext
 
   const documentProps = pageContext.documentProps || {}
   const title = documentProps.title || 'Steven Pereira'
